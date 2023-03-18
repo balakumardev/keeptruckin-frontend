@@ -1,0 +1,19 @@
+<main class="flex-shrink-0">
+  <div class="container">
+    <form [formGroup]="newTruckFormGroup" (ngSubmit)="onSubmit()">
+      <div formGroupName="truck">
+        <h1 class="h3 mb-3 fw-normal">Add New Truck Schedule</h1>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Truck Name" formControlName="name">
+          <label for="floatingInput">Truck name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="date" class="form-control" id="date" placeholder="Password" formControlName="date">
+          <label for="date">Date</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Add</button>
+      </div>
+    </form>
+  </div>
+</main>
