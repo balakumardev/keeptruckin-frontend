@@ -8,7 +8,7 @@ import {ScheduleDto} from "../common/schedule-dto";
   providedIn: 'root'
 })
 export class Schedule {
-  API_ROOT: string = "http://localhost:8080/api";
+  API_ROOT: string = "http://keeptruckin.balakumar.xyz:8089/api";
   constructor(private httpClient: HttpClient) { }
   newTruckSchedule(newTruck: NewTruckRequest) : Observable<any> {
     return this.httpClient.post<NewTruckRequest>(this.API_ROOT + "/truck", newTruck);
