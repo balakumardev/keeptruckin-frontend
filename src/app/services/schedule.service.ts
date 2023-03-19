@@ -2,18 +2,23 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {NewTruckRequest} from "../common/new-truck-request";
-import {ScheduleDto} from "../common/schedule-dto";
+import {Truck} from "../common/truck";
+import {EditTruckRequest} from "../common/edit-truck-request";
 
 @Injectable({
   providedIn: 'root'
 })
 export class Schedule {
-  API_ROOT: string = "http://keeptruckin.balakumar.xyz:8089/api";
+  API_ROOT: string = "http://localhost:8080/api";
   constructor(private httpClient: HttpClient) { }
   newTruckSchedule(newTruck: NewTruckRequest) : Observable<any> {
     return this.httpClient.post<NewTruckRequest>(this.API_ROOT + "/truck", newTruck);
   }
-  getTodaySchedule() : Observable<ScheduleDto> {
-    return this.httpClient.get<ScheduleDto>(this.API_ROOT + "/schedule");
+  updateTruck(oldName: string, newName: string) {
+    let editTruckRequest: EditTruckRequest = new EditTruckRequest(oldName, newName);
+    return this.httpClient.put<EditTruckRequest>(this.API_ROOT + "/truck", editTruckRequest);
+  }
+  getTodaySchedule() : Observable<Truck[]> {
+    return this.httpClient.get<Truck[]>(this.API_ROOT + "/schedule/today");
   }
 }

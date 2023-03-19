@@ -1,9 +1,13 @@
 export class NewTruckRequest {
-  dayCode: string | undefined;
-  truckName: string | undefined;
-
-  public constructor(d : string = "", t: string= "") {
-    this.dayCode = d;
-    this.truckName = t;
+  public constructor(public endDate: string = '',
+                     public truckName: string = '',
+                     public sunday: boolean = false,
+                     public monday: boolean = false,
+                     public tuesday: boolean = false,
+                     public wednesday: boolean = false,
+                     public thursday: boolean = false,
+                     public friday: boolean = false,
+                     public saturday: boolean = false
+  ) {
   }
 }

@@ -9,10 +9,12 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {DatePipe} from "@angular/common";
 import {Schedule} from "./services/schedule.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { EditTruckComponent } from './components/edit-truck/edit-truck.component';
 
 const routes : Routes = [
   {path: 'today', component: TodaySchedule},
   {path: 'new-truck', component: NewTruckScheduleComponent},
+  {path: 'edit-truck', component: EditTruckComponent},
   {path: '', redirectTo:'/today', pathMatch:'full'},
   {path: '**', redirectTo:'/today', pathMatch:'full'}
 ]
@@ -20,7 +22,8 @@ const routes : Routes = [
   declarations: [
     AppComponent,
     TodaySchedule,
-    NewTruckScheduleComponent
+    NewTruckScheduleComponent,
+    EditTruckComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

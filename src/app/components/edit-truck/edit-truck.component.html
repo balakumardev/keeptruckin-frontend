@@ -1,0 +1,15 @@
+<main class="flex-shrink-0">
+  <div class="container">
+    <form [formGroup]="editTruckFormGroup" (ngSubmit)="onSubmit()">
+      <div formGroupName="truck">
+        <h1 class="h3 mb-3 fw-normal">Edit Truck: {{truckName}}</h1>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Truck Name" formControlName="newName">
+          <label for="floatingInput">New Truck Name</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</main>
