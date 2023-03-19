@@ -19,7 +19,7 @@ You can checkout the application after the container is up and running by just g
 > http://localhost
 
 
-### Routes
+## Routes
 
 1. `/new-truck` : Page for adding new truck schedule
 2. `/today` : Page for retrieving the today's schedule
