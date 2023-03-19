@@ -1,3 +1,4 @@
+/* This DTO class is used as a request for the Create Truck API */
 export class NewTruckRequest {
   public constructor(public endDate: string = '',
                      public truckName: string = '',

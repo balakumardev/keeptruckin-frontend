@@ -16,6 +16,7 @@ export class EditTruckComponent implements OnInit {
               private router: Router,
               private schedule:Schedule,
               private formbuilder: FormBuilder) {
+    // initialize the formgroup
     this.editTruckFormGroup = this.formbuilder.group({
       truck: this.formbuilder.group({
         newName : new FormControl('')
@@ -24,6 +25,7 @@ export class EditTruckComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // get the truck name from the query param
     this.actRoute.queryParams.subscribe(params => {
       this.truckName = params['truckName'];
       console.log("editing truck: " + this.truckName);
@@ -31,6 +33,7 @@ export class EditTruckComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // calling the backend service when the form is submitted
     let newName: string = this.editTruckFormGroup.get('truck')!.get('newName')?.value;
 
     this.schedule.updateTruck(this.truckName, newName).subscribe({
