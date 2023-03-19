@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  keeptruckin-frontend:
+    build: ./
+    ports:
+      - "80:80"
+    restart: always
